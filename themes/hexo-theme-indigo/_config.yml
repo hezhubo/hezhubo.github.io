@@ -19,11 +19,11 @@ menu:
     url: https://github.com/hezhubo
     target: _blank
 #  weibo:
-#    url: http://www.weibo.com/ysweb
+#    url: 
 #    target: _blank
-  link:
-    text: 测试
-    url: /
+#  link:
+#    text: 测试
+#    url: /
 
 rss: /atom.xml
 
@@ -59,7 +59,7 @@ toc:
   list_number: false  # 是否显示数字排序
 
 #站长统计，如要开启，输入CNZZ站点id，如 cnzz: 1255152447
-cnzz: false
+cnzz: 1259692670
 
 # Miscellaneous
 google_analytics: ''
