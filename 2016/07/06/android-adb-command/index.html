@@ -3,22 +3,53 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hezb&#39;s blog | android程序猿</title>
+  <title>ADB常用命令 | Hezb&#39;s blog | android程序猿</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#3F51B5">
   
   
-  <meta name="keywords" content="undefined">
-  <meta name="description" content="人的梦想是不会结束的~~~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hezb's blog">
-<meta property="og:url" content="http://hezhubo.github.io/index.html">
+  <meta name="keywords" content="android,adb">
+  <meta name="description" content="常用命令adb帮助1adb help
+
+启动adb服务1adb start-server
+
+终止adb服务1adb kill-server
+
+显示当前运行的全部设备1adb devices [-l]　　// [-l] 显示设备详细信息
+
+对某一设备执行命令1adb -s &amp;lt;specific device&amp;gt;　　// &amp;lt;specific device&amp;gt; 设备ID
+
+重启设备1a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ADB常用命令">
+<meta property="og:url" content="http://hezhubo.github.io/2016/07/06/android-adb-command/index.html">
 <meta property="og:site_name" content="Hezb's blog">
-<meta property="og:description" content="人的梦想是不会结束的~~~">
+<meta property="og:description" content="常用命令adb帮助1adb help
+
+启动adb服务1adb start-server
+
+终止adb服务1adb kill-server
+
+显示当前运行的全部设备1adb devices [-l]　　// [-l] 显示设备详细信息
+
+对某一设备执行命令1adb -s &amp;lt;specific device&amp;gt;　　// &amp;lt;specific device&amp;gt; 设备ID
+
+重启设备1a">
+<meta property="og:updated_time" content="2016-07-24T16:56:23.728Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hezb's blog">
-<meta name="twitter:description" content="人的梦想是不会结束的~~~">
+<meta name="twitter:title" content="ADB常用命令">
+<meta name="twitter:description" content="常用命令adb帮助1adb help
+
+启动adb服务1adb start-server
+
+终止adb服务1adb kill-server
+
+显示当前运行的全部设备1adb devices [-l]　　// [-l] 显示设备详细信息
+
+对某一设备执行命令1adb -s &amp;lt;specific device&amp;gt;　　// &amp;lt;specific device&amp;gt; 设备ID
+
+重启设备1a">
   
     <link rel="alternative" href="/atom.xml" title="Hezb&#39;s blog" type="application/atom+xml">
   
@@ -30,7 +61,7 @@
 <body>
   <div id="loading" class="active"></div>
 
-  <nav id="menu"  >
+  <nav id="menu" class="hide" >
    <div class="inner flex-row-vertical">
   <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
       <i class="icon icon-lg icon-close"></i>
@@ -46,7 +77,7 @@
   </div>
   <ul class="nav flex-col">
     
-        <li class="waves-block waves-effect active">
+        <li class="waves-block waves-effect">
           <a href="/"  >
             <i class="icon icon-lg icon-home"></i>
             主页
@@ -93,7 +124,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Hezb&#39;s blog</div>
+        <div class="flex-col header-title ellipsis">ADB常用命令</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -114,40 +145,74 @@
 </header>
 <header class="content-header">
   <div class="container">
-    <h1 class="author">Hezb&#39;s blog</h1>
-    <h5 class="subtitle">android程序猿</h5>
+    <h1 class="author">ADB常用命令</h1>
+    <h5 class="subtitle">2016-07-06</h5>
   </div>
 </header>
 
     <div class="container body-wrap">
       
-  <ul class="post-list">
-  
-    <li class="post-list-item">
   <article id="post-android-adb-command" class="article article-type-post" itemprop="blogPost">
     
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/07/06/android-adb-command/">ADB常用命令</a>
-    </h3>
-  
-
-
-
       <div class="post-meat flex-row">
         <div class="flex-col">
 	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 </div>
-        <time datetime="2016-07-06T15:35:56.000Z" itemprop="datePublished" class="post-tiem">
-  2016-07-06
-</time>
       </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="adb帮助"><a href="#adb帮助" class="headerlink" title="adb帮助"></a>adb帮助</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常用命令"><span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#adb帮助"><span class="post-toc-text">adb帮助</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#启动adb服务"><span class="post-toc-text">启动adb服务</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#终止adb服务"><span class="post-toc-text">终止adb服务</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#显示当前运行的全部设备"><span class="post-toc-text">显示当前运行的全部设备</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#对某一设备执行命令"><span class="post-toc-text">对某一设备执行命令</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#重启设备"><span class="post-toc-text">重启设备</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#以网络方式连接设备"><span class="post-toc-text">以网络方式连接设备</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#断开网络设备"><span class="post-toc-text">断开网络设备</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装（覆盖）应用"><span class="post-toc-text">安装（覆盖）应用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#卸载应用"><span class="post-toc-text">卸载应用</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#传输文件到设备"><span class="post-toc-text">传输文件到设备</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#拉取设备文件到电脑"><span class="post-toc-text">拉取设备文件到电脑</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#拉取设备文件到电脑-1"><span class="post-toc-text">拉取设备文件到电脑</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#打印日志"><span class="post-toc-text">打印日志</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#过滤标签"><span class="post-toc-text">过滤标签</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#按等级过滤"><span class="post-toc-text">按等级过滤</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#登陆设备"><span class="post-toc-text">登陆设备</span></a></li></ol></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="adb帮助"><a href="#adb帮助" class="headerlink" title="adb帮助"></a>adb帮助</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h5 id="启动adb服务"><a href="#启动adb服务" class="headerlink" title="启动adb服务"></a>启动adb服务</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb start-server</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -182,142 +247,63 @@
 <h5 id="登陆设备"><a href="#登陆设备" class="headerlink" title="登陆设备"></a>登陆设备</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure>
 <p>执行完shell后，可使用android支持的linux命令<br><br></p>
 
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/07/06/android-adb-command/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
-    
-
-  </article>
-
-
-</li>
-  
-    <li class="post-list-item">
-  <article id="post-FFmpeg-command" class="article article-type-post" itemprop="blogPost">
-    
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/07/05/FFmpeg-command/">FFmpeg 常用命令</a>
-    </h3>
+            <blockquote>
+              <p>
+                本文地址：
+                <a href="http://hezhubo.github.io/2016/07/06/android-adb-command/" target="_blank" rel="external">http://hezhubo.github.io/2016/07/06/android-adb-command/</a>
+              </p>
+              <footer><cite><a href="http://hezhubo.github.io">@Hezb's blog</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
   
 
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/07/05/FFmpeg-command/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">FFmpeg 常用命令</h4>
+      </a>
+    </div>
+  
+</nav>
 
 
-      <div class="post-meat flex-row">
-        <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FFmpeg/">FFmpeg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音视频/">音视频</a></li></ul>
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="android-adb-command" data-title="ADB常用命令" data-url="http://hezhubo.github.io/2016/07/06/android-adb-command/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hezhubo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
 </div>
-        <time datetime="2016-07-05T01:35:34.000Z" itemprop="datePublished" class="post-tiem">
-  2016-07-05
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="分离视频音频流"><a href="#分离视频音频流" class="headerlink" title="分离视频音频流"></a>分离视频音频流</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input_file -vcodec copy -an output_file_video　　// 分离视频流</span><br><span class="line">ffmpeg -i input_file -acodec copy -vn output_file_audio　　// 分离音频流</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="视频裁剪"><a href="#视频裁剪" class="headerlink" title="视频裁剪"></a>视频裁剪</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -ss 0:1:30 -t 0:0:20 -i input.mp4 -vcodec copy -acodec copy output.mp4    // 时间格式可以是 00:00:00.000 或 x.xxx(单位秒)</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="视频合成"><a href="#视频合成" class="headerlink" title="视频合成"></a>视频合成</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"1.mp4"</span> -vcodec copy -acodec copy -vbsf h264_mp4toannexb <span class="string">"1.ts"</span></span><br><span class="line">ffmpeg -i <span class="string">"2.mp4"</span> -vcodec copy -acodec copy -vbsf h264_mp4toannexb <span class="string">"2.ts"</span></span><br><span class="line">ffmpeg -i <span class="string">"concat:1.ts|2.ts"</span> -acodec copy -vcodec copy -absf aac_adtstoasc <span class="string">"output.mp4"</span>    // 若只有1个ts,不需要concat:</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="视频截图"><a href="#视频截图" class="headerlink" title="视频截图"></a>视频截图</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"input.mp4"</span> -r 2 -start_number 1 -vframes 10 <span class="_">-s</span> 60x60 <span class="string">"thumb_%d.jpg"</span>    // 连续截取图片，设置帧率为2fps，截取10张，也就是截取了5秒的视频截图，截图保存的名称的第一张为thumb_1.jpg，往后自动累加</span><br><span class="line">ffmpeg -ss 00:56 -i <span class="string">"input.mp4"</span> <span class="_">-f</span> image2 <span class="_">-s</span> 100x100 <span class="string">"thumb.jpg"</span>    // 截取指定时间（00:56）的画面</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="视频录制"><a href="#视频录制" class="headerlink" title="视频录制"></a>视频录制</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"rtmp://192.168.1.100:1935/live/demo"</span> –vcodec copy <span class="string">"output.mp4"</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="YUV序列播放"><a href="#YUV序列播放" class="headerlink" title="YUV序列播放"></a>YUV序列播放</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay <span class="_">-f</span> rawvideo -video_size 1920x1080 input.yuv</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="YUV序列转AVI"><a href="#YUV序列转AVI" class="headerlink" title="YUV序列转AVI"></a>YUV序列转AVI</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg –s w*h –pix_fmt yuv420p –i input.yuv –vcodec mpeg4 output.avi    // w/h 视频宽/高</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h4 id="加水印"><a href="#加水印" class="headerlink" title="加水印"></a>加水印</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i logo.png -filter_complex <span class="string">"overlay=10:5"</span> out.mp4    // 左上角 距离 左边距 10  上边距 5</span><br></pre></td></tr></table></figure>
-<p>overlay参数:<br>左上角为 overlay=10:5  // 左边 10  上边 5<br>右上角为 overlay=main_w-overlay_w-10:5   // 右边 10  上边 5<br>右下角为 overlay=main_w-overlay_w-10:main_h-overlay_h-5    // 右边 10  下边 5<br>左下角为 overlay=10: main_h-overlay_h-5  // 左边 10  上边 5</p>
-<hr>
-<h3 id="常用参数说明"><a href="#常用参数说明" class="headerlink" title="常用参数说明"></a>常用参数说明</h3><h4 id="主要参数："><a href="#主要参数：" class="headerlink" title="主要参数："></a>主要参数：</h4><p><strong>-i</strong> 设定输入流</p>
-<p><strong>-f</strong> 设定输出格式</p>
-<p><strong>-ss</strong> 开始时间</p>
-<p><strong>-t</strong> 持续时间</p>
-<p><strong>-y</strong>  覆盖输出文件</p>
-<h4 id="视频参数："><a href="#视频参数：" class="headerlink" title="视频参数："></a>视频参数：</h4><p><strong>-aspect</strong> 设定画面的比例</p>
-<p><strong>-b</strong> 设定视频流量，默认为200Kbit/s</p>
-<p><strong>-bitexact</strong> 使用标准比特率</p>
-<p><strong>-r</strong> 设定帧速率，默认为25</p>
-<p><strong>-s</strong> 设定画面的宽与高</p>
-<p><strong>-title</strong> 设置标题</p>
-<p><strong>-vn</strong> 不处理视频</p>
-<p><strong>-vcodec</strong> 设定视频编解码器，未设定时则使用与输入流相同的编解码器</p>
-<p><strong>-vframes</strong> 设置转换多少帧(frame)的视频</p>
-<p><strong>-qscale</strong>  视频质量，取值0.01-255，约小质量越好 </p>
-<p><strong>-qmin</strong> 设定最小质量，与-qmax（设定最大质量）共用，比如-qmin 10 -qmax 31 </p>
-<p><strong>-sameq</strong> 使用和源同样的质量</p>
-<h4 id="音频参数："><a href="#音频参数：" class="headerlink" title="音频参数："></a>音频参数：</h4><p><strong>-ar</strong> 设定采样率</p>
-<p><strong>-ac</strong> 设定声音的Channel数</p>
-<p><strong>-acodec</strong> 设定声音编解码器，未设定时则使用与输入流相同的编解码器</p>
-<p><strong>-ab</strong> 设定声音比特率</p>
-<p><strong>-an</strong> 不处理音频</p>
-<p><strong>-vol</strong> 设定音量&lt;百分比&gt;，200即原来的2倍</p>
 
-        
+
+
+
+
+
+        </div>
+
       </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/07/05/FFmpeg-command/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
+
     
 
   </article>
 
-
-</li>
-  
-    <li class="post-list-item">
-  <article id="post-android-adb-prot-occupied" class="article article-type-post" itemprop="blogPost">
-    
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/07/05/android-adb-prot-occupied/">解决ADB 5037端口 被外部程序占用问题</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-</div>
-        <time datetime="2016-07-04T16:44:52.000Z" itemprop="datePublished" class="post-tiem">
-  2016-07-05
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <p><strong>windows环境下：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr <span class="string">"5037"</span></span><br></pre></td></tr></table></figure></p>
-<p>结果：<br> TCP    127.0.0.1:5037         0.0.0.0:0              LISTENING       <strong>1408</strong><br> …</p>
-<p>查看哪个进程占用了<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist | findstr <span class="string">"1408"</span></span><br></pre></td></tr></table></figure></p>
-<p>结果：<br>SogouPhoneService.exe         1408 Console                    1      8,836 K</p>
-<p>原来是SogouPhoneService进程占了adb的端口</p>
-<p>用命令或打开任务管理器终止掉该进程就可以了。</p>
-<p>再执行<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure></p>
-<p>OK!!!</p>
-
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/07/05/android-adb-prot-occupied/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
-    
-
-  </article>
-
-
-</li>
-  
-  </ul>
-  
 
 
     </div>
@@ -327,10 +313,10 @@
 
 <script>
 var BLOG_SHARE = {
-    title: "Hezb's blog",
+    title: "ADB常用命令",
     pic: "/img/logo.jpg",
     summary: document.getElementsByName('summary')[0].content,
-    url: "http://hezhubo.github.io/index.html"
+    url: "http://hezhubo.github.io/2016/07/06/android-adb-command/index.html"
 };
 </script>
 <div class="global-share" id="global-share">

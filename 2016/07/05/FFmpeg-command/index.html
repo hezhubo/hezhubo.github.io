@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>FFmpeg 常用命令 | Hezb&#39;s blog | android程序猿</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="音视频,FFmpeg">
+  <meta name="description" content="常用命令分离视频音频流12ffmpeg -i input_file -vcodec copy -an output_file_video　　// 分离视频流ffmpeg -i input_file -acodec copy -vn output_file_audio　　// 分离音频流
+
+视频裁剪1ffmpeg -ss 0:1:30 -t 0:0:20 -i input.mp4 -vcodec c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FFmpeg 常用命令">
+<meta property="og:url" content="http://hezhubo.github.io/2016/07/05/FFmpeg-command/index.html">
+<meta property="og:site_name" content="Hezb's blog">
+<meta property="og:description" content="常用命令分离视频音频流12ffmpeg -i input_file -vcodec copy -an output_file_video　　// 分离视频流ffmpeg -i input_file -acodec copy -vn output_file_audio　　// 分离音频流
+
+视频裁剪1ffmpeg -ss 0:1:30 -t 0:0:20 -i input.mp4 -vcodec c">
+<meta property="og:updated_time" content="2016-07-06T15:30:03.229Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FFmpeg 常用命令">
+<meta name="twitter:description" content="常用命令分离视频音频流12ffmpeg -i input_file -vcodec copy -an output_file_video　　// 分离视频流ffmpeg -i input_file -acodec copy -vn output_file_audio　　// 分离音频流
+
+视频裁剪1ffmpeg -ss 0:1:30 -t 0:0:20 -i input.mp4 -vcodec c">
+  
+    <link rel="alternative" href="/atom.xml" title="Hezb&#39;s blog" type="application/atom+xml">
+  
+  <meta name="summary" content="人的梦想是不会结束的~~~">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <nav id="menu" class="hide" >
+   <div class="inner flex-row-vertical">
+  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+      <i class="icon icon-lg icon-close"></i>
+  </a>
+  <div class="brand-wrap">
+    <div class="brand">
+      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
+      <hgroup class="introduce">
+        <h5 class="nickname">Hezb</h5>
+        <a href="mailto:undefined" title="526125686@qq.com" class="mail">526125686@qq.com</a>
+      </hgroup>
+    </div>
+  </div>
+  <ul class="nav flex-col">
+    
+        <li class="waves-block waves-effect">
+          <a href="/"  >
+            <i class="icon icon-lg icon-home"></i>
+            主页
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/archives"  >
+            <i class="icon icon-lg icon-archives"></i>
+            Archives
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="/tags"  >
+            <i class="icon icon-lg icon-tags"></i>
+            Tags
+          </a>
+        </li>
+    
+        <li class="waves-block waves-effect">
+          <a href="https://github.com/hezhubo" target="_blank" >
+            <i class="icon icon-lg icon-github"></i>
+            Github
+          </a>
+        </li>
+    
+  </ul>
+
+  <footer class="footer">
+  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
+  <p>Hezb&#39;s blog &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
+</footer>
+
+</div>
+
+  </nav>
+  <main id="main">
+    <header class="header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">FFmpeg 常用命令</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header">
+  <div class="container">
+    <h1 class="author">FFmpeg 常用命令</h1>
+    <h5 class="subtitle">2016-07-05</h5>
+  </div>
+</header>
+
+    <div class="container body-wrap">
+      
+  <article id="post-FFmpeg-command" class="article article-type-post" itemprop="blogPost">
+    
+      <div class="post-meat flex-row">
+        <div class="flex-col">
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FFmpeg/">FFmpeg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音视频/">音视频</a></li></ul>
+</div>
+      </div>
+      <div class="post-body">
+
+        <aside class="post-widget" id="post-widget">
+
+          
+          <div class="post-share" id="post-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+          
+
+          
+          <nav class="post-toc-wrap" id="post-toc">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用命令"><span class="post-toc-text">常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分离视频音频流"><span class="post-toc-text">分离视频音频流</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#视频裁剪"><span class="post-toc-text">视频裁剪</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#视频合成"><span class="post-toc-text">视频合成</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#视频截图"><span class="post-toc-text">视频截图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#视频录制"><span class="post-toc-text">视频录制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YUV序列播放"><span class="post-toc-text">YUV序列播放</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YUV序列转AVI"><span class="post-toc-text">YUV序列转AVI</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#加水印"><span class="post-toc-text">加水印</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用参数说明"><span class="post-toc-text">常用参数说明</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#主要参数："><span class="post-toc-text">主要参数：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#视频参数："><span class="post-toc-text">视频参数：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#音频参数："><span class="post-toc-text">音频参数：</span></a></li></ol></li></ol>
+          </nav>
+          
+        </aside>
+
+        <div class="post-main">
+
+            <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="分离视频音频流"><a href="#分离视频音频流" class="headerlink" title="分离视频音频流"></a>分离视频音频流</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input_file -vcodec copy -an output_file_video　　// 分离视频流</span><br><span class="line">ffmpeg -i input_file -acodec copy -vn output_file_audio　　// 分离音频流</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="视频裁剪"><a href="#视频裁剪" class="headerlink" title="视频裁剪"></a>视频裁剪</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -ss 0:1:30 -t 0:0:20 -i input.mp4 -vcodec copy -acodec copy output.mp4    // 时间格式可以是 00:00:00.000 或 x.xxx(单位秒)</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="视频合成"><a href="#视频合成" class="headerlink" title="视频合成"></a>视频合成</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"1.mp4"</span> -vcodec copy -acodec copy -vbsf h264_mp4toannexb <span class="string">"1.ts"</span></span><br><span class="line">ffmpeg -i <span class="string">"2.mp4"</span> -vcodec copy -acodec copy -vbsf h264_mp4toannexb <span class="string">"2.ts"</span></span><br><span class="line">ffmpeg -i <span class="string">"concat:1.ts|2.ts"</span> -acodec copy -vcodec copy -absf aac_adtstoasc <span class="string">"output.mp4"</span>    // 若只有1个ts,不需要concat:</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="视频截图"><a href="#视频截图" class="headerlink" title="视频截图"></a>视频截图</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"input.mp4"</span> -r 2 -start_number 1 -vframes 10 <span class="_">-s</span> 60x60 <span class="string">"thumb_%d.jpg"</span>    // 连续截取图片，设置帧率为2fps，截取10张，也就是截取了5秒的视频截图，截图保存的名称的第一张为thumb_1.jpg，往后自动累加</span><br><span class="line">ffmpeg -ss 00:56 -i <span class="string">"input.mp4"</span> <span class="_">-f</span> image2 <span class="_">-s</span> 100x100 <span class="string">"thumb.jpg"</span>    // 截取指定时间（00:56）的画面</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="视频录制"><a href="#视频录制" class="headerlink" title="视频录制"></a>视频录制</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i <span class="string">"rtmp://192.168.1.100:1935/live/demo"</span> –vcodec copy <span class="string">"output.mp4"</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="YUV序列播放"><a href="#YUV序列播放" class="headerlink" title="YUV序列播放"></a>YUV序列播放</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffplay <span class="_">-f</span> rawvideo -video_size 1920x1080 input.yuv</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="YUV序列转AVI"><a href="#YUV序列转AVI" class="headerlink" title="YUV序列转AVI"></a>YUV序列转AVI</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg –s w*h –pix_fmt yuv420p –i input.yuv –vcodec mpeg4 output.avi    // w/h 视频宽/高</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="加水印"><a href="#加水印" class="headerlink" title="加水印"></a>加水印</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input.mp4 -i logo.png -filter_complex <span class="string">"overlay=10:5"</span> out.mp4    // 左上角 距离 左边距 10  上边距 5</span><br></pre></td></tr></table></figure>
+<p>overlay参数:<br>左上角为 overlay=10:5  // 左边 10  上边 5<br>右上角为 overlay=main_w-overlay_w-10:5   // 右边 10  上边 5<br>右下角为 overlay=main_w-overlay_w-10:main_h-overlay_h-5    // 右边 10  下边 5<br>左下角为 overlay=10: main_h-overlay_h-5  // 左边 10  上边 5</p>
+<hr>
+<h3 id="常用参数说明"><a href="#常用参数说明" class="headerlink" title="常用参数说明"></a>常用参数说明</h3><h4 id="主要参数："><a href="#主要参数：" class="headerlink" title="主要参数："></a>主要参数：</h4><p><strong>-i</strong> 设定输入流</p>
+<p><strong>-f</strong> 设定输出格式</p>
+<p><strong>-ss</strong> 开始时间</p>
+<p><strong>-t</strong> 持续时间</p>
+<p><strong>-y</strong>  覆盖输出文件</p>
+<h4 id="视频参数："><a href="#视频参数：" class="headerlink" title="视频参数："></a>视频参数：</h4><p><strong>-aspect</strong> 设定画面的比例</p>
+<p><strong>-b</strong> 设定视频流量，默认为200Kbit/s</p>
+<p><strong>-bitexact</strong> 使用标准比特率</p>
+<p><strong>-r</strong> 设定帧速率，默认为25</p>
+<p><strong>-s</strong> 设定画面的宽与高</p>
+<p><strong>-title</strong> 设置标题</p>
+<p><strong>-vn</strong> 不处理视频</p>
+<p><strong>-vcodec</strong> 设定视频编解码器，未设定时则使用与输入流相同的编解码器</p>
+<p><strong>-vframes</strong> 设置转换多少帧(frame)的视频</p>
+<p><strong>-qscale</strong>  视频质量，取值0.01-255，约小质量越好 </p>
+<p><strong>-qmin</strong> 设定最小质量，与-qmax（设定最大质量）共用，比如-qmin 10 -qmax 31 </p>
+<p><strong>-sameq</strong> 使用和源同样的质量</p>
+<h4 id="音频参数："><a href="#音频参数：" class="headerlink" title="音频参数："></a>音频参数：</h4><p><strong>-ar</strong> 设定采样率</p>
+<p><strong>-ac</strong> 设定声音的Channel数</p>
+<p><strong>-acodec</strong> 设定声音编解码器，未设定时则使用与输入流相同的编解码器</p>
+<p><strong>-ab</strong> 设定声音比特率</p>
+<p><strong>-an</strong> 不处理音频</p>
+<p><strong>-vol</strong> 设定音量&lt;百分比&gt;，200即原来的2倍</p>
+
+            <blockquote>
+              <p>
+                本文地址：
+                <a href="http://hezhubo.github.io/2016/07/05/FFmpeg-command/" target="_blank" rel="external">http://hezhubo.github.io/2016/07/05/FFmpeg-command/</a>
+              </p>
+              <footer><cite><a href="http://hezhubo.github.io">@Hezb's blog</a></cite></footer>
+            </blockquote>
+            </div>
+            
+<nav class="post-nav">
+  
+    <div class="waves-block waves-effect prev fl">
+      <a href="/2016/07/06/android-adb-command/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ADB常用命令</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next fr">
+      <a href="/2016/07/05/android-adb-prot-occupied/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">解决ADB 5037端口 被外部程序占用问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+            
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="FFmpeg-command" data-title="FFmpeg 常用命令" data-url="http://hezhubo.github.io/2016/07/05/FFmpeg-command/index.html"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"hezhubo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    
+
+  </article>
+
+
+
+    </div>
+  </main>
+<div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+<script>
+var BLOG_SHARE = {
+    title: "FFmpeg 常用命令",
+    pic: "/img/logo.jpg",
+    summary: document.getElementsByName('summary')[0].content,
+    url: "http://hezhubo.github.io/2016/07/05/FFmpeg-command/index.html"
+};
+</script>
+<div class="global-share" id="global-share">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
+          豆
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script src="/js/main.js"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<script type="text/template" id="search-tpl">
+<li class="item">
+    <a href="/{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</script>
+
+<script src="/js/search.js"></script>
+
+
+
+
+
+<script src="http://s95.cnzz.com/z_stat.php?id=1259692670&web_id=1259692670"></script>
+
+
+
+
+
+</body>
+</html>
