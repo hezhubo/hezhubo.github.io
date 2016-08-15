@@ -70,7 +70,7 @@ adb logcat --help　　// logcat帮助
 adb logcat [options] [filterspecs]　　// [options] [filterspecs] 过滤参数
 ```
 </br>
-###### 清楚缓冲区日志
+###### 清除缓冲区日志
 ```bash
 adb logcat -c
 ```
