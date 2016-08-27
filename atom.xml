@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://hezhubo.github.io/"/>
-  <updated>2016-08-27T17:45:06.728Z</updated>
+  <updated>2016-08-27T17:50:44.384Z</updated>
   <id>http://hezhubo.github.io/</id>
   
   <author>
@@ -16,13 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>android-mediaplayer</title>
+    <title>android多媒体播放器之MediaPlayer</title>
     <link href="http://hezhubo.github.io/2016/08/27/android-mediaplayer/"/>
     <id>http://hezhubo.github.io/2016/08/27/android-mediaplayer/</id>
     <published>2016-08-27T12:24:15.000Z</published>
-    <updated>2016-08-27T17:45:06.728Z</updated>
+    <updated>2016-08-27T17:50:44.384Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="android多媒体播放器之MediaPlayer"><a href="#android多媒体播放器之MediaPlayer" class="headerlink" title="android多媒体播放器之MediaPlayer"></a>android多媒体播放器之MediaPlayer</h4><pre><code>废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了，呵呵(￣▽￣)&quot;
+    <content type="html"><![CDATA[<pre><code>废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了，呵呵(￣▽￣)&quot;
 </code></pre><p><img src="https://developer.android.com/images/mediaplayer_state_diagram.gif" alt="android官方MediaPlayer状态图"></p>
 <h4 id="MediaPlayer的简单使用"><a href="#MediaPlayer的简单使用" class="headerlink" title="MediaPlayer的简单使用"></a>MediaPlayer的简单使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MediaPlayer mediaPlayer = <span class="keyword">new</span> MediaPlayer();</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    mediaPlayer.setDataSource(<span class="string">"/mnt/sdcard/test.mp3"</span>); <span class="comment">// 设置多媒体文件路径，支持本地文件，http，rtsp协议</span></span><br><span class="line">    mediaPlayer.prepare(); <span class="comment">// 以同步(阻塞)方式，预处理（加载）多媒体文件，此方法一般用于本地文件 </span></span><br><span class="line">    mediaPlayer.start(); <span class="comment">// 开始播放</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -45,7 +45,8 @@
     
     <summary type="html">
     
-      &lt;h4 id=&quot;android多媒体播放器之MediaPlayer&quot;&gt;&lt;a href=&quot;#android多媒体播放器之MediaPlayer&quot; class=&quot;headerlink&quot; title=&quot;android多媒体播放器之MediaPlayer&quot;&gt;&lt;/a&gt;android多媒体播
+      &lt;pre&gt;&lt;code&gt;废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了，呵呵(￣▽￣)&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;https://developer.android.com/images/mediapl
     
     </summary>
     
