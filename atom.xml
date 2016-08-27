@@ -1,153 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hezb&#39;s blog</title>
+  <subtitle>android程序猿</subtitle>
+  <link href="/atom.xml" rel="self"/>
   
-  <title>Hezb&#39;s blog | android程序猿</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="http://hezhubo.github.io/"/>
+  <updated>2016-08-27T17:45:06.728Z</updated>
+  <id>http://hezhubo.github.io/</id>
   
-  <meta name="theme-color" content="#3F51B5">
-  
-  
-  <meta name="keywords" content="undefined">
-  <meta name="description" content="人的梦想是不会结束的~~~">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hezb's blog">
-<meta property="og:url" content="http://hezhubo.github.io/index.html">
-<meta property="og:site_name" content="Hezb's blog">
-<meta property="og:description" content="人的梦想是不会结束的~~~">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hezb's blog">
-<meta name="twitter:description" content="人的梦想是不会结束的~~~">
-  
-    <link rel="alternative" href="/atom.xml" title="Hezb&#39;s blog" type="application/atom+xml">
-  
-  <meta name="summary" content="人的梦想是不会结束的~~~">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <div id="loading" class="active"></div>
-
-  <nav id="menu"  >
-   <div class="inner flex-row-vertical">
-  <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
-      <i class="icon icon-lg icon-close"></i>
-  </a>
-  <div class="brand-wrap">
-    <div class="brand">
-      <a href="/" class="avatar"><img src="/img/logo.jpg"></a>
-      <hgroup class="introduce">
-        <h5 class="nickname">Hezb</h5>
-        <a href="mailto:undefined" title="526125686@qq.com" class="mail">526125686@qq.com</a>
-      </hgroup>
-    </div>
-  </div>
-  <ul class="nav flex-col">
+  <author>
+    <name>Hezb</name>
     
-        <li class="waves-block waves-effect active">
-          <a href="/"  >
-            <i class="icon icon-lg icon-home"></i>
-            主页
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/archives"  >
-            <i class="icon icon-lg icon-archives"></i>
-            Archives
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="/tags"  >
-            <i class="icon icon-lg icon-tags"></i>
-            Tags
-          </a>
-        </li>
-    
-        <li class="waves-block waves-effect">
-          <a href="https://github.com/hezhubo" target="_blank" >
-            <i class="icon icon-lg icon-github"></i>
-            Github
-          </a>
-        </li>
-    
-  </ul>
-
-  <footer class="footer">
-  <p><a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0;vertical-align:middle;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAPCAMAAABEF7i9AAAAllBMVEUAAAD///+rsapERER3d3eIiIjMzMzu7u4iIiKUmZO6v7rKzsoODg4RERFVVVUNDQ0NDg0PEA8zMzNLTEtbXltmZmZydnF9gn2AgICPkI+ZmZmqqqq7u7vFxsXIzMgNDQwZGRkgICAhISEkJSMnKCcuMC4xMzE5Ozk7PTtBQkFCQkJDQ0Nna2eGhoaHh4ezuLLGysbd3d1wVGpAAAAA4UlEQVR42q2T1xqCMAyFk7QsBQeKA9x7j/d/OSm22CpX0nzcpA1/T05aAOuBVkMAScQFHLnEwoCo2f1TnQIGoVMewjZEjVFN4GH1Ue1Cn2jWqwfsOOj6wDwGvotsl/c8lv7KIq1eLOsT0HMFHMIE/RZyHnlphryT9zyV+8WH5e8yQw3wnQvgAFxPTKUVi555SHR/lOfLMgVTeDlSfN+TaoUsiTyeIm+bCkHvCA2FUKG48LDtYBZBknsYP/G8NTw0gaaHyuQf4H5pecrB/FYCT2sL9zAfy1Xyjou6L8X2W7YcLyBZCRtnq/zfAAAAAElFTkSuQmCC" /></a></p>
-  <p>Hezb&#39;s blog &copy; 2016</p>
-  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
-  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
-  <a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-2x icon-rss-square"></i></a>
-</footer>
-
-</div>
-
-  </nav>
-  <main id="main">
-    <header class="header" id="header">
-    <div class="flex-row">
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
-          <i class="icon icon-lg icon-navicon"></i>
-        </a>
-        <div class="flex-col header-title ellipsis">Hezb&#39;s blog</div>
-        
-        <div class="search-wrap" id="search-wrap">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
-                <i class="icon icon-lg icon-chevron-left"></i>
-            </a>
-            <input type="text" id="key" class="search-input " autocomplete="off" placeholder="输入感兴趣的关键字">
-            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
-                <i class="icon icon-lg icon-search"></i>
-            </a>
-        </div>
-        
-        
-        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-share">
-            <i class="icon icon-lg icon-share-alt"></i>
-        </a>
-        
-    </div>
-</header>
-<header class="content-header">
-  <div class="container">
-    <h1 class="author">Hezb&#39;s blog</h1>
-    <h5 class="subtitle">android程序猿</h5>
-  </div>
-</header>
-
-    <div class="container body-wrap">
-      
-  <ul class="post-list">
+  </author>
   
-    <li class="post-list-item">
-  <article id="post-android-mediaplayer" class="article article-type-post" itemprop="blogPost">
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android-mediaplayer</title>
+    <link href="http://hezhubo.github.io/2016/08/27/android-mediaplayer/"/>
+    <id>http://hezhubo.github.io/2016/08/27/android-mediaplayer/</id>
+    <published>2016-08-27T12:24:15.000Z</published>
+    <updated>2016-08-27T17:45:06.728Z</updated>
     
-      
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/08/27/android-mediaplayer/">android-mediaplayer</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mediaplayer/">mediaplayer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多媒体/">多媒体</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音视频/">音视频</a></li></ul>
-</div>
-        <time datetime="2016-08-27T12:24:15.000Z" itemprop="datePublished" class="post-tiem">
-  2016-08-27
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <h4 id="android多媒体播放器之MediaPlayer"><a href="#android多媒体播放器之MediaPlayer" class="headerlink" title="android多媒体播放器之MediaPlayer"></a>android多媒体播放器之MediaPlayer</h4><pre><code>废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了，呵呵(￣▽￣)&quot;
+    <content type="html"><![CDATA[<h4 id="android多媒体播放器之MediaPlayer"><a href="#android多媒体播放器之MediaPlayer" class="headerlink" title="android多媒体播放器之MediaPlayer"></a>android多媒体播放器之MediaPlayer</h4><pre><code>废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了，呵呵(￣▽￣)&quot;
 </code></pre><p><img src="https://developer.android.com/images/mediaplayer_state_diagram.gif" alt="android官方MediaPlayer状态图"></p>
 <h4 id="MediaPlayer的简单使用"><a href="#MediaPlayer的简单使用" class="headerlink" title="MediaPlayer的简单使用"></a>MediaPlayer的简单使用</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MediaPlayer mediaPlayer = <span class="keyword">new</span> MediaPlayer();</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    mediaPlayer.setDataSource(<span class="string">"/mnt/sdcard/test.mp3"</span>); <span class="comment">// 设置多媒体文件路径，支持本地文件，http，rtsp协议</span></span><br><span class="line">    mediaPlayer.prepare(); <span class="comment">// 以同步(阻塞)方式，预处理（加载）多媒体文件，此方法一般用于本地文件 </span></span><br><span class="line">    mediaPlayer.start(); <span class="comment">// 开始播放</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -166,44 +41,31 @@
 <h6 id="设置视频画面输出"><a href="#设置视频画面输出" class="headerlink" title="设置视频画面输出"></a>设置视频画面输出</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 通过SurfaceView来显示视频</span></span><br><span class="line">SurfaceView surfaceView; <span class="comment">// 通过xml资源或是使用代码自行创建</span></span><br><span class="line"><span class="comment">// 需要给surface持有者添加监听器</span></span><br><span class="line">surfaceView.getHolder().addCallback(<span class="keyword">new</span> SurfaceHolder.Callback() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">surfaceCreated</span><span class="params">(SurfaceHolder holder)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// surfaceView成功创建，此时holder才可用</span></span><br><span class="line">        mediaPlayer.setDisplay(holder);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">surfaceChanged</span><span class="params">(SurfaceHolder holder, <span class="keyword">int</span> format, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// surface发生改变时</span></span><br><span class="line">        <span class="comment">// format 格式， width 宽， height 高</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">surfaceDestroyed</span><span class="params">(SurfaceHolder holder)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// surfaceView销毁时</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过TextureView来显示视频</span></span><br><span class="line">TextureView textureView; <span class="comment">// 通过xml资源或是使用代码自行创建</span></span><br><span class="line">textureView.setSurfaceTextureListener(<span class="keyword">new</span> TextureView.SurfaceTextureListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSurfaceTextureAvailable</span><span class="params">(SurfaceTexture surface, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 当SurfaceTexture可用时</span></span><br><span class="line">        <span class="comment">// width 纹理宽， height 纹理高</span></span><br><span class="line">        Surface displaySurface = <span class="keyword">new</span> Surface(surface); <span class="comment">// 通过SurfaceTexture来构建Surface </span></span><br><span class="line">        mediaPlayer.setSurface(displaySurface);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSurfaceTextureSizeChanged</span><span class="params">(SurfaceTexture surface, <span class="keyword">int</span> width, <span class="keyword">int</span> height)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 纹理尺寸发生改变时</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onSurfaceTextureDestroyed</span><span class="params">(SurfaceTexture surface)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// textureView销毁时</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSurfaceTextureUpdated</span><span class="params">(SurfaceTexture surface)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// textureView重新设置了SurfaceTexture</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h6 id="获取视频宽高"><a href="#获取视频宽高" class="headerlink" title="获取视频宽高"></a>获取视频宽高</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> width = mediaPlayer.getVideoWidth(); <span class="comment">// 需要在预处理完成后才会起作用</span></span><br><span class="line"><span class="keyword">int</span> height = mediaPlayer.getVideoHeight(); <span class="comment">// 需要在预处理完成后才会起作用</span></span><br></pre></td></tr></table></figure>
 <p>其他方法就不一一列出了，可以自行查看<a href="https://developer.android.com/reference/android/media/MediaPlayer.html" target="_blank" rel="external">MediaPlayer源码</a></p>
-
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/08/27/android-mediaplayer/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
+]]></content>
     
-
-  </article>
-
-
-</li>
-  
-    <li class="post-list-item">
-  <article id="post-android-adb-command" class="article article-type-post" itemprop="blogPost">
+    <summary type="html">
     
-      
-
-
+      &lt;h4 id=&quot;android多媒体播放器之MediaPlayer&quot;&gt;&lt;a href=&quot;#android多媒体播放器之MediaPlayer&quot; class=&quot;headerlink&quot; title=&quot;android多媒体播放器之MediaPlayer&quot;&gt;&lt;/a&gt;android多媒体播
+    
+    </summary>
+    
+    
+      <category term="音视频" scheme="http://hezhubo.github.io/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/"/>
+    
+      <category term="mediaplayer" scheme="http://hezhubo.github.io/tags/mediaplayer/"/>
+    
+      <category term="多媒体" scheme="http://hezhubo.github.io/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
+    
+  </entry>
   
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/07/06/android-adb-command/">ADB常用命令</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-</div>
-        <time datetime="2016-07-06T15:35:56.000Z" itemprop="datePublished" class="post-tiem">
-  2016-07-06
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="adb帮助"><a href="#adb帮助" class="headerlink" title="adb帮助"></a>adb帮助</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+  <entry>
+    <title>ADB常用命令</title>
+    <link href="http://hezhubo.github.io/2016/07/06/android-adb-command/"/>
+    <id>http://hezhubo.github.io/2016/07/06/android-adb-command/</id>
+    <published>2016-07-06T15:35:56.000Z</published>
+    <updated>2016-08-15T14:36:06.230Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><h5 id="adb帮助"><a href="#adb帮助" class="headerlink" title="adb帮助"></a>adb帮助</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h5 id="启动adb服务"><a href="#启动adb服务" class="headerlink" title="启动adb服务"></a>启动adb服务</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb start-server</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -249,44 +111,29 @@
 <p><br></p>
 <h6 id="模拟键盘鼠标事件"><a href="#模拟键盘鼠标事件" class="headerlink" title="模拟键盘鼠标事件"></a>模拟键盘鼠标事件</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">input keyevent &lt;value&gt;　　// 模拟键盘按键 value对应键盘键值</span><br><span class="line">sendevent [device] [<span class="built_in">type</span>] [code] [value]　　// 全事件，需要多个组合使用  device: /dev/input/event0 </span><br><span class="line">getevent　　// 监听当前手机事件</span><br></pre></td></tr></table></figure>
 <p>键盘事件表<br>| KeyEvent Value | KEYCODE               |<br>| :————- | :——————– |<br>| 0              | KEYCODE_UNKNOWN       |<br>| 1              | KEYCODE_MENU          |<br>| 2              | KEYCODE_SOFT_RIGHT    |<br>| 3              | KEYCODE_HOME          |<br>| 4              | KEYCODE_BACK          |<br>| 5              | KEYCODE_CALL          |<br>| 6              | KEYCODE_ENDCALL       |<br>| 7              | KEYCODE_0             |<br>| 8              | KEYCODE_1             |<br>| 9              | KEYCODE_2             |<br>| 10             | KEYCODE_3             |<br>| 11             | KEYCODE_4             |<br>| 12             | KEYCODE_5             |<br>| 13             | KEYCODE_6             |<br>| 14             | KEYCODE_7             |<br>| 15             | KEYCODE_8             |<br>| 16             | KEYCODE_9             |<br>| 17             | KEYCODE_STAR          |<br>| 18             | KEYCODE_POUND         |<br>| 19             | KEYCODE_DPAD_UP       |<br>| 20             | KEYCODE_DPAD_DOWN     |<br>| 21             | KEYCODE_DPAD_LEFT     |<br>| 22             | KEYCODE_DPAD_RIGHT    |<br>| 23             | KEYCODE_DPAD_CENTER   |<br>| 24             | KEYCODE_VOLUME_UP     |<br>| 25             | KEYCODE_VOLUME_DOWN   |<br>| 26             | KEYCODE_POWER         |<br>| 27             | KEYCODE_CAMERA        |<br>| 28             | KEYCODE_CLEAR         |<br>| 29             | KEYCODE_A             |<br>| 30             | KEYCODE_B             |<br>| 31             | KEYCODE_C             |<br>| 32             | KEYCODE_D             |<br>| 33             | KEYCODE_E             |<br>| 34             | KEYCODE_F             |<br>| 35             | KEYCODE_G             |<br>| 36             | KEYCODE_H             |<br>| 37             | KEYCODE_I             |<br>| 38             | KEYCODE_J             |<br>| 39             | KEYCODE_K             |<br>| 40             | KEYCODE_L             |<br>| 41             | KEYCODE_M             |<br>| 42             | KEYCODE_N             |<br>| 43             | KEYCODE_O             |<br>| 44             | KEYCODE_P             |<br>| 45             | KEYCODE_Q             |<br>| 46             | KEYCODE_R             |<br>| 47             | KEYCODE_S             |<br>| 48             | KEYCODE_T             |<br>| 49             | KEYCODE_U             |<br>| 50             | KEYCODE_V             |<br>| 51             | KEYCODE_W             |<br>| 52             | KEYCODE_X             |<br>| 53             | KEYCODE_Y             |<br>| 54             | KEYCODE_Z             |<br>| 55             | KEYCODE_COMMA         |<br>| 56             | KEYCODE_PERIOD        |<br>| 57             | KEYCODE_ALT_LEFT      |<br>| 58             | KEYCODE_ALT_RIGHT     |<br>| 59             | KEYCODE_SHIFT_LEFT    |<br>| 60             | KEYCODE_SHIFT_RIGHT   |<br>| 61             | KEYCODE_TAB           |<br>| 62             | KEYCODE_SPACE         |<br>| 63             | KEYCODE_SYM           |<br>| 64             | KEYCODE_EXPLORER      |<br>| 65             | KEYCODE_ENVELOPE      |<br>| 66             | KEYCODE_ENTER         |<br>| 67             | KEYCODE_DEL           |<br>| 68             | KEYCODE_GRAVE         |<br>| 69             | KEYCODE_MINUS         |<br>| 70             | KEYCODE_EQUALS        |<br>| 71             | KEYCODE_LEFT_BRACKET  |<br>| 72             | KEYCODE_RIGHT_BRACKET |<br>| 73             | KEYCODE_BACKSLASH     |<br>| 74             | KEYCODE_SEMICOLON     |<br>| 75             | KEYCODE_APOSTROPHE    |<br>| 76             | KEYCODE_SLASH         |<br>| 77             | KEYCODE_AT            |<br>| 78             | KEYCODE_NUM           |<br>| 79             | KEYCODE_HEADSETHOOK   |<br>| 80             | KEYCODE_FOCUS         |<br>| 81             | KEYCODE_PLUS          |<br>| 82             | KEYCODE_MENU          |<br>| 83             | KEYCODE_NOTIFICATION  |<br>| 84             | KEYCODE_SEARCH        |<br>| 85             | TAG_LAST_KEYCODE      |</p>
-
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/07/06/android-adb-command/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
+]]></content>
     
-
-  </article>
-
-
-</li>
-  
-    <li class="post-list-item">
-  <article id="post-FFmpeg-command" class="article article-type-post" itemprop="blogPost">
+    <summary type="html">
     
-      
-
-
+      &lt;h4 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h4&gt;&lt;h5 id=&quot;adb帮助&quot;&gt;&lt;a href=&quot;#adb帮助&quot; class=&quot;headerlink&quot; title=&quot;adb帮助&quot;&gt;
+    
+    </summary>
+    
+    
+      <category term="android" scheme="http://hezhubo.github.io/tags/android/"/>
+    
+      <category term="adb" scheme="http://hezhubo.github.io/tags/adb/"/>
+    
+  </entry>
   
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/07/05/FFmpeg-command/">FFmpeg 常用命令</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/FFmpeg/">FFmpeg</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/音视频/">音视频</a></li></ul>
-</div>
-        <time datetime="2016-07-05T01:35:34.000Z" itemprop="datePublished" class="post-tiem">
-  2016-07-05
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="分离视频音频流"><a href="#分离视频音频流" class="headerlink" title="分离视频音频流"></a>分离视频音频流</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input_file -vcodec copy -an output_file_video　　// 分离视频流</span><br><span class="line">ffmpeg -i input_file -acodec copy -vn output_file_audio　　// 分离音频流</span><br></pre></td></tr></table></figure>
+  <entry>
+    <title>FFmpeg 常用命令</title>
+    <link href="http://hezhubo.github.io/2016/07/05/FFmpeg-command/"/>
+    <id>http://hezhubo.github.io/2016/07/05/FFmpeg-command/</id>
+    <published>2016-07-05T01:35:34.000Z</published>
+    <updated>2016-07-06T15:30:03.229Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="分离视频音频流"><a href="#分离视频音频流" class="headerlink" title="分离视频音频流"></a>分离视频音频流</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -i input_file -vcodec copy -an output_file_video　　// 分离视频流</span><br><span class="line">ffmpeg -i input_file -acodec copy -vn output_file_audio　　// 分离音频流</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h4 id="视频裁剪"><a href="#视频裁剪" class="headerlink" title="视频裁剪"></a>视频裁剪</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg -ss 0:1:30 -t 0:0:20 -i input.mp4 -vcodec copy -acodec copy output.mp4    // 时间格式可以是 00:00:00.000 或 x.xxx(单位秒)</span><br></pre></td></tr></table></figure>
 <p><br></p>
@@ -326,44 +173,29 @@
 <p><strong>-ab</strong> 设定声音比特率</p>
 <p><strong>-an</strong> 不处理音频</p>
 <p><strong>-vol</strong> 设定音量&lt;百分比&gt;，200即原来的2倍</p>
-
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/07/05/FFmpeg-command/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
+]]></content>
     
-
-  </article>
-
-
-</li>
-  
-    <li class="post-list-item">
-  <article id="post-android-adb-prot-occupied" class="article article-type-post" itemprop="blogPost">
+    <summary type="html">
     
-      
-
-
+      &lt;h3 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h3&gt;&lt;h4 id=&quot;分离视频音频流&quot;&gt;&lt;a href=&quot;#分离视频音频流&quot; class=&quot;headerlink&quot; title=&quot;分离视
+    
+    </summary>
+    
+    
+      <category term="音视频" scheme="http://hezhubo.github.io/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/"/>
+    
+      <category term="FFmpeg" scheme="http://hezhubo.github.io/tags/FFmpeg/"/>
+    
+  </entry>
   
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2016/07/05/android-adb-prot-occupied/">解决ADB 5037端口 被外部程序占用问题</a>
-    </h3>
-  
-
-
-
-      <div class="post-meat flex-row">
-        <div class="flex-col">
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/adb/">adb</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-</div>
-        <time datetime="2016-07-04T16:44:52.000Z" itemprop="datePublished" class="post-tiem">
-  2016-07-05
-</time>
-      </div>
-      <div class="post-content" id="post-content" itemprop="postContent" >
-        
-          <p><strong>windows环境下：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr <span class="string">"5037"</span></span><br></pre></td></tr></table></figure></p>
+  <entry>
+    <title>解决ADB 5037端口 被外部程序占用问题</title>
+    <link href="http://hezhubo.github.io/2016/07/05/android-adb-prot-occupied/"/>
+    <id>http://hezhubo.github.io/2016/07/05/android-adb-prot-occupied/</id>
+    <published>2016-07-04T16:44:52.000Z</published>
+    <updated>2016-07-05T16:42:50.613Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>windows环境下：</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr <span class="string">"5037"</span></span><br></pre></td></tr></table></figure></p>
 <p>结果：<br> TCP    127.0.0.1:5037         0.0.0.0:0              LISTENING       <strong>1408</strong><br> …</p>
 <p>查看哪个进程占用了<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist | findstr <span class="string">"1408"</span></span><br></pre></td></tr></table></figure></p>
 <p>结果：<br>SogouPhoneService.exe         1408 Console                    1      8,836 K</p>
@@ -371,108 +203,19 @@
 <p>用命令或打开任务管理器终止掉该进程就可以了。</p>
 <p>再执行<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure></p>
 <p>OK!!!</p>
-
-        
-      </div>
-      <div class="post-footer clearfix">
-        <a href="/2016/07/05/android-adb-prot-occupied/" class="post-more waves-effect waves-button waves-light">MORE</a>
-      </div>
+]]></content>
     
-
-  </article>
-
-
-</li>
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;windows环境下：&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+    
+      <category term="android" scheme="http://hezhubo.github.io/tags/android/"/>
+    
+      <category term="adb" scheme="http://hezhubo.github.io/tags/adb/"/>
+    
+  </entry>
   
-  </ul>
-  
-
-
-    </div>
-  </main>
-<div class="mask" id="mask"></div>
-<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
-
-<script>
-var BLOG_SHARE = {
-    title: "Hezb's blog",
-    pic: "/img/logo.jpg",
-    summary: document.getElementsByName('summary')[0].content,
-    url: "http://hezhubo.github.io/index.html"
-};
-</script>
-<div class="global-share" id="global-share">
-    <div class="tit">分享到：</div>
-    <ul class="reset share-icons">
-      <li>
-        <a class="weibo share-sns" href="javascript:;" data-title="微博" data-service="tsina">
-          <i class="icon icon-weibo"></i>
-        </a>
-      </li>
-      <li>
-        <a class="weixin share-sns" href="javascript:;" data-title="微信" data-service="weixin">
-          <i class="icon icon-weixin"></i>
-        </a>
-      </li>
-      <li>
-        <a class="qq share-sns" href="javascript:;" data-title=" QQ" data-service="cqq">
-          <i class="icon icon-qq"></i>
-        </a>
-      </li>
-      <li>
-        <a class="facebook share-sns" href="javascript:;" data-title=" Facebook" data-service="fb">
-          <i class="icon icon-facebook"></i>
-        </a>
-      </li>
-      <li>
-        <a class="twitter share-sns" href="javascript:;" data-title=" Twitter" data-service="twitter">
-          <i class="icon icon-twitter"></i>
-        </a>
-      </li>
-      <li>
-        <a class="douban share-sns" href="javascript:;" data-title="豆瓣" data-service="douban">
-          豆
-        </a>
-      </li>
-    </ul>
- </div>
-
-
-
-<script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
-
-<script src="/js/main.js"></script>
-
-
-
-<div class="search-panel" id="search-panel">
-    <ul class="search-result" id="search-result"></ul>
-</div>
-<script type="text/template" id="search-tpl">
-<li class="item">
-    <a href="/{path}" class="waves-block waves-effect">
-        <div class="title ellipsis" title="{title}">{title}</div>
-        <div class="flex-row flex-middle">
-            <div class="tags ellipsis">
-                {tags}
-            </div>
-            <time class="flex-col time">{date}</time>
-        </div>
-    </a>
-</li>
-</script>
-
-<script src="/js/search.js"></script>
-
-
-
-
-
-<script src="http://s95.cnzz.com/z_stat.php?id=1259692670&web_id=1259692670"></script>
-
-
-
-
-
-</body>
-</html>
+</feed>
