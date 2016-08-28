@@ -4,7 +4,8 @@ date: 2016-08-27 20:24:15
 tags: [mediaplayer,多媒体,音视频]
 ---
 
-		废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了，呵呵(￣▽￣)"
+&nbsp;&nbsp;&nbsp;&nbsp;**废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了。
+呵呵(￣▽￣)"。。。图要翻墙才能看到**
 		
 ![android官方MediaPlayer状态图](https://developer.android.com/images/mediaplayer_state_diagram.gif)
 
