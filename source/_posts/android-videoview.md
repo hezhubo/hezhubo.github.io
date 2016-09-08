@@ -13,7 +13,7 @@ videoView.start(); // 开始播放
 ```
 </br>
 **VideoView其实是SurfaceView+MediaPlayer的封装，下面来分析一下源码的实现。**
-### *基于API 23的源码分析：*
+### *基于API 23的主要源码分析：*
 #### 结构关系
 ```java
 public class VideoView extends SurfaceView implements MediaPlayerControl, SubtitleController.Anchor {
@@ -136,19 +136,21 @@ SurfaceHolder.Callback mSHCallback = new SurfaceHolder.Callback()
     }
 };
 ```
-#### SurfaceView绘制部分
+#### SurfaceView测量部分
 ```java
 @Override
 protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) { // 测量宽高
+    // 根据视频尺寸和布局宽高计算宽高
     int width = getDefaultSize(mVideoWidth, widthMeasureSpec);
     int height = getDefaultSize(mVideoHeight, heightMeasureSpec);
-    if (mVideoWidth > 0 && mVideoHeight > 0) {
-
+    if (mVideoWidth > 0 && mVideoHeight > 0) { // 当视频宽高可用时
+        // 计算布局设定的大小
         int widthSpecMode = MeasureSpec.getMode(widthMeasureSpec);
         int widthSpecSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSpecMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSpecSize = MeasureSpec.getSize(heightMeasureSpec);
 
+        // 下列条件父布局宽高是否限定子布局宽高
         if (widthSpecMode == MeasureSpec.EXACTLY && heightSpecMode == MeasureSpec.EXACTLY) {
             // the size is fixed
             width = widthSpecSize;
@@ -196,6 +198,456 @@ protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) { // 测�
     } else {
         // no size yet, just adopt the given spec sizes
     }
-    setMeasuredDimension(width, height);
+    setMeasuredDimension(width, height); // 存储测量的宽高
 }
 ```
+#### 内部监听器
+##### 视频尺寸变化监听器
+```java
+MediaPlayer.OnVideoSizeChangedListener mSizeChangedListener =
+    new MediaPlayer.OnVideoSizeChangedListener() {
+        public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
+            mVideoWidth = mp.getVideoWidth();
+            mVideoHeight = mp.getVideoHeight();
+            if (mVideoWidth != 0 && mVideoHeight != 0) {
+                // 设置surface固定尺寸
+                getHolder().setFixedSize(mVideoWidth, mVideoHeight);
+                requestLayout(); // 请求重新测量布局
+            }
+        }
+};
+```
+##### 视频预处理监听器
+```java
+MediaPlayer.OnPreparedListener mPreparedListener = new MediaPlayer.OnPreparedListener() {
+    public void onPrepared(MediaPlayer mp) {
+        mCurrentState = STATE_PREPARED; // 当前状态已预处理完成
+
+        // Get the capabilities of the player for this stream
+        Metadata data = mp.getMetadata(MediaPlayer.METADATA_ALL,
+                                  MediaPlayer.BYPASS_METADATA_FILTER);
+
+        if (data != null) { // 解析获取的视频信息
+            mCanPause = !data.has(Metadata.PAUSE_AVAILABLE)
+                    || data.getBoolean(Metadata.PAUSE_AVAILABLE);
+            mCanSeekBack = !data.has(Metadata.SEEK_BACKWARD_AVAILABLE)
+                    || data.getBoolean(Metadata.SEEK_BACKWARD_AVAILABLE);
+            mCanSeekForward = !data.has(Metadata.SEEK_FORWARD_AVAILABLE)
+                    || data.getBoolean(Metadata.SEEK_FORWARD_AVAILABLE);
+        } else { // 视频信息获取失败，下面操作默认都可以
+            mCanPause = mCanSeekBack = mCanSeekForward = true;
+        }
+
+        if (mOnPreparedListener != null) {
+            mOnPreparedListener.onPrepared(mMediaPlayer); // 告诉外部的监听器
+        }
+        if (mMediaController != null) {
+            mMediaController.setEnabled(true); // 当前控制器可用
+        }
+        mVideoWidth = mp.getVideoWidth();
+        mVideoHeight = mp.getVideoHeight();
+
+        int seekToPosition = mSeekWhenPrepared;  // mSeekWhenPrepared may be changed after seekTo() call
+        if (seekToPosition != 0) {
+            seekTo(seekToPosition); // 跳转到指定位置
+        }
+        if (mVideoWidth != 0 && mVideoHeight != 0) {
+            getHolder().setFixedSize(mVideoWidth, mVideoHeight); // 设置surface固定尺寸
+            if (mSurfaceWidth == mVideoWidth && mSurfaceHeight == mVideoHeight) {
+                // We didn't actually change the size (it was already at the size
+                // we need), so we won't get a "surface changed" callback, so
+                // start the video here instead of in the callback.
+                if (mTargetState == STATE_PLAYING) { // 当目标状态为播放状态时
+                    start(); // 开始播放
+                    if (mMediaController != null) {
+                        mMediaController.show(); // 展示控制器UI
+                    }
+                } else if (!isPlaying() &&
+                           (seekToPosition != 0 || getCurrentPosition() > 0)) {
+                   // 不是在播放状态并且当前进度不为0时，展示控制器UI
+                   if (mMediaController != null) {
+                       // Show the media controls when we're paused into a video and make 'em stick.
+                       mMediaController.show(0);
+                   }
+               }
+            }
+        } else {
+            // We don't know the video size yet, but should start anyway.
+            // The video size might be reported to us later.
+            if (mTargetState == STATE_PLAYING) { // 当目标状态为播放状态时
+                start(); // 开始播放
+            }
+        }
+    }
+};
+```
+##### 视频播放完成监听器
+```java
+private MediaPlayer.OnCompletionListener mCompletionListener =
+    new MediaPlayer.OnCompletionListener() {
+    public void onCompletion(MediaPlayer mp) {
+        // 当前状态与目标状态为播放完成状态
+        mCurrentState = STATE_PLAYBACK_COMPLETED;
+        mTargetState = STATE_PLAYBACK_COMPLETED;
+        if (mMediaController != null) {
+            mMediaController.hide(); // 隐藏控制层
+        }
+        if (mOnCompletionListener != null) {
+            mOnCompletionListener.onCompletion(mMediaPlayer); // 通知外部的监听器
+        }
+    }
+};
+```
+##### 视频播放(过程)信息监听器
+```java
+private MediaPlayer.OnInfoListener mInfoListener =
+    new MediaPlayer.OnInfoListener() {
+    public  boolean onInfo(MediaPlayer mp, int arg1, int arg2) {
+        // 这里没做任何处理，直接通知外部的监听器
+        if (mOnInfoListener != null) {
+            mOnInfoListener.onInfo(mp, arg1, arg2);
+        }
+        return true;
+    }
+};
+```
+##### 视频播放错误监听器
+```java
+private MediaPlayer.OnErrorListener mErrorListener =
+    new MediaPlayer.OnErrorListener() {
+    public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
+        Log.d(TAG, "Error: " + framework_err + "," + impl_err);
+        // 当前状态与目标状态为错误状态
+        mCurrentState = STATE_ERROR;
+        mTargetState = STATE_ERROR;
+        if (mMediaController != null) {
+            mMediaController.hide(); // 隐藏控制层UI
+        }
+
+        /* If an error handler has been supplied, use it and finish. */
+        if (mOnErrorListener != null) {
+            if (mOnErrorListener.onError(mMediaPlayer, framework_err, impl_err)) {
+                // 通知外部的监听器，又外部来处理错误，不往下执行
+                return true;
+            }
+        }
+
+        /* Otherwise, pop up an error dialog so the user knows that
+         * something bad has happened. Only try and pop up the dialog
+         * if we're attached to a window. When we're going away and no
+         * longer have a window, don't bother showing the user an error.
+         */
+        if (getWindowToken() != null) {
+            Resources r = mContext.getResources();
+            int messageId;
+
+            if (framework_err == MediaPlayer.MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK) {
+                messageId = com.android.internal.R.string.VideoView_error_text_invalid_progressive_playback;
+            } else {
+                messageId = com.android.internal.R.string.VideoView_error_text_unknown;
+            }
+
+            new AlertDialog.Builder(mContext)
+                    .setMessage(messageId)
+                    .setPositiveButton(com.android.internal.R.string.VideoView_error_button,
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    /* If we get here, there is no onError listener, so
+                                     * at least inform them that the video is over.
+                                     */
+                                    if (mOnCompletionListener != null) {
+                                        mOnCompletionListener.onCompletion(mMediaPlayer);
+                                    }
+                                }
+                            })
+                    .setCancelable(false)
+                    .show();
+        }
+        return true;
+    }
+};
+```
+##### 视频缓冲监听器
+```java
+private MediaPlayer.OnBufferingUpdateListener mBufferingUpdateListener =
+    new MediaPlayer.OnBufferingUpdateListener() {
+    public void onBufferingUpdate(MediaPlayer mp, int percent) {
+        mCurrentBufferPercentage = percent; // 记录当前缓冲百分比
+    }
+};
+```
+#### 触碰及键盘事件
+```java
+@Override
+public boolean onTouchEvent(MotionEvent ev) {
+    // 触摸事件
+    if (isInPlaybackState() && mMediaController != null) { // 当前状态为可用状态并且控制器存在
+        toggleMediaControlsVisiblity(); // 显示/隐藏控制层UI
+    }
+    return false;
+}
+
+@Override
+public boolean onTrackballEvent(MotionEvent ev) {
+    // 轨迹球事件
+    if (isInPlaybackState() && mMediaController != null) { // 当前状态为可用状态并且控制器存在
+        toggleMediaControlsVisiblity(); // 显示/隐藏控制层UI
+    }
+    return false;
+}
+
+/**
+ * 判断是否为可用状态
+ * 播放器不为空
+ * 当前状态不为错误，初始，预处理中
+ */
+private boolean isInPlaybackState() {
+    return (mMediaPlayer != null &&
+            mCurrentState != STATE_ERROR &&
+            mCurrentState != STATE_IDLE &&
+            mCurrentState != STATE_PREPARING);
+}
+
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event)
+{
+    // 主要是用于显示/隐藏控制器UI,以及处理播放暂停
+    // 判断按键是否为需要处理的按键
+    boolean isKeyCodeSupported = keyCode != KeyEvent.KEYCODE_BACK &&
+                                 keyCode != KeyEvent.KEYCODE_VOLUME_UP &&
+                                 keyCode != KeyEvent.KEYCODE_VOLUME_DOWN &&
+                                 keyCode != KeyEvent.KEYCODE_VOLUME_MUTE &&
+                                 keyCode != KeyEvent.KEYCODE_MENU &&
+                                 keyCode != KeyEvent.KEYCODE_CALL &&
+                                 keyCode != KeyEvent.KEYCODE_ENDCALL;
+    if (isInPlaybackState() && isKeyCodeSupported && mMediaController != null) {
+        if (keyCode == KeyEvent.KEYCODE_HEADSETHOOK ||
+                keyCode == KeyEvent.KEYCODE_MEDIA_PLAY_PAUSE) {
+            if (mMediaPlayer.isPlaying()) {
+                pause();
+                mMediaController.show();
+            } else {
+                start();
+                mMediaController.hide();
+            }
+            return true;
+        } else if (keyCode == KeyEvent.KEYCODE_MEDIA_PLAY) {
+            if (!mMediaPlayer.isPlaying()) {
+                start();
+                mMediaController.hide();
+            }
+            return true;
+        } else if (keyCode == KeyEvent.KEYCODE_MEDIA_STOP
+                || keyCode == KeyEvent.KEYCODE_MEDIA_PAUSE) {
+            if (mMediaPlayer.isPlaying()) {
+                pause();
+                mMediaController.show();
+            }
+            return true;
+        } else {
+            toggleMediaControlsVisiblity();
+        }
+    }
+
+    return super.onKeyDown(keyCode, event);
+}
+
+/**
+ * 控制器UI显示与隐藏相互切换
+ */
+private void toggleMediaControlsVisiblity() {
+    if (mMediaController.isShowing()) {
+        mMediaController.hide();
+    } else {
+        mMediaController.show();
+    }
+}
+```
+#### 主要操作方法
+##### 设置视频源路径
+```java
+/**
+ * Sets video path.
+ *
+ * @param path the path of the video.
+ */
+public void setVideoPath(String path) {
+    setVideoURI(Uri.parse(path));
+}
+
+/**
+ * Sets video URI.
+ *
+ * @param uri the URI of the video.
+ */
+public void setVideoURI(Uri uri) {
+    setVideoURI(uri, null);
+}
+
+/**
+ * Sets video URI using specific headers.
+ *
+ * @param uri     the URI of the video.
+ * @param headers the headers for the URI request.
+ *                Note that the cross domain redirection is allowed by default, but that can be
+ *                changed with key/value pairs through the headers parameter with
+ *                "android-allow-cross-domain-redirect" as the key and "0" or "1" as the value
+ *                to disallow or allow cross domain redirection.
+ */
+public void setVideoURI(Uri uri, Map<String, String> headers) {
+    mUri = uri; // 设置视频的Uri
+    mHeaders = headers; // 设置请求头
+    mSeekWhenPrepared = 0; // 设置预处理完成不跳转
+    openVideo(); // 打开播放器并设置相应参数
+    requestLayout(); // 请求重新测量布局
+    invalidate(); // 请求重绘
+}
+
+/**
+ * 最重要的方法————开启视频
+ * 初始化MediaPlayer及其参数
+ */
+private void openVideo() {
+    if (mUri == null || mSurfaceHolder == null) {
+        // not ready for playback just yet, will try again later
+        return;
+    }
+    // we shouldn't clear the target state, because somebody might have
+    // called start() previously
+    release(false); // 不改变状态地释放资源
+
+    // 获取音频管理器并请求获得音频焦点，销毁时需要释放焦点
+    AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
+    am.requestAudioFocus(null, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
+
+    try {
+        mMediaPlayer = new MediaPlayer();
+        // 以下设置字幕相关的
+        // TODO: create SubtitleController in MediaPlayer, but we need
+        // a context for the subtitle renderers
+        final Context context = getContext();
+        final SubtitleController controller = new SubtitleController(
+                context, mMediaPlayer.getMediaTimeProvider(), mMediaPlayer);
+        controller.registerRenderer(new WebVttRenderer(context));
+        controller.registerRenderer(new TtmlRenderer(context));
+        controller.registerRenderer(new ClosedCaptionRenderer(context));
+        mMediaPlayer.setSubtitleAnchor(controller, this);
+
+        // 设置音频的SessionId
+        if (mAudioSession != 0) {
+            mMediaPlayer.setAudioSessionId(mAudioSession);
+        } else {
+            mAudioSession = mMediaPlayer.getAudioSessionId();
+        }
+
+        // 设置各监听器
+        mMediaPlayer.setOnPreparedListener(mPreparedListener);
+        mMediaPlayer.setOnVideoSizeChangedListener(mSizeChangedListener);
+        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+        mMediaPlayer.setOnErrorListener(mErrorListener);
+        mMediaPlayer.setOnInfoListener(mInfoListener);
+        mMediaPlayer.setOnBufferingUpdateListener(mBufferingUpdateListener);
+
+        mCurrentBufferPercentage = 0; // 缓冲进度为0
+        mMediaPlayer.setDataSource(mContext, mUri, mHeaders); // 设置播放地址等参数
+        mMediaPlayer.setDisplay(mSurfaceHolder); // 设置Surface持有者，用于绘制视频
+        mMediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC); // 设置音频流类型
+        mMediaPlayer.setScreenOnWhilePlaying(true); // 设置当播放保持屏幕高亮
+        mMediaPlayer.prepareAsync(); // 开始异步预处理
+
+        // 添加字幕流
+        for (Pair<InputStream, MediaFormat> pending: mPendingSubtitleTracks) {
+            try {
+                mMediaPlayer.addSubtitleSource(pending.first, pending.second);
+            } catch (IllegalStateException e) {
+                mInfoListener.onInfo(
+                        mMediaPlayer, MediaPlayer.MEDIA_INFO_UNSUPPORTED_SUBTITLE, 0);
+            }
+        }
+
+        // we don't set the target state here either, but preserve the
+        // target state that was there before.
+        mCurrentState = STATE_PREPARING; // 当前为预处理中状态
+        attachMediaController(); // 添加控制器（若没有设置，则不添加）
+    } catch (IOException ex) {
+        Log.w(TAG, "Unable to open content: " + mUri, ex);
+        mCurrentState = STATE_ERROR;
+        mTargetState = STATE_ERROR;
+        mErrorListener.onError(mMediaPlayer, MediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
+        return;
+    } catch (IllegalArgumentException ex) {
+        Log.w(TAG, "Unable to open content: " + mUri, ex);
+        mCurrentState = STATE_ERROR;
+        mTargetState = STATE_ERROR;
+        mErrorListener.onError(mMediaPlayer, MediaPlayer.MEDIA_ERROR_UNKNOWN, 0);
+        return;
+    } finally {
+        mPendingSubtitleTracks.clear();
+    }
+}
+
+/*
+ * release the media player in any state
+ */
+private void release(boolean cleartargetstate) {
+    if (mMediaPlayer != null) {
+        mMediaPlayer.reset(); // 重置播放器
+        mMediaPlayer.release(); // 是否播放器
+        mMediaPlayer = null;
+        mPendingSubtitleTracks.clear(); // 释放字幕
+        mCurrentState = STATE_IDLE; // 当前状态为初始状态
+        if (cleartargetstate) { // 需要清楚目标状态
+            mTargetState  = STATE_IDLE; // 目标状态为初始状态
+        }
+        AudioManager am = (AudioManager) mContext.getSystemService(Context.AUDIO_SERVICE);
+        am.abandonAudioFocus(null); // 释放音频焦点
+    }
+}
+```
+##### 播放
+```java
+@Override
+public void start() {
+    if (isInPlaybackState()) { // 播放器可以时
+        mMediaPlayer.start(); // 开始播放
+        mCurrentState = STATE_PLAYING; // 当前状态为播放状态
+    }
+    mTargetState = STATE_PLAYING; // 目标状态为播放状态
+}
+```
+##### 暂停
+```java
+@Override
+public void pause() {
+    if (isInPlaybackState()) { // 播放器可以时
+        if (mMediaPlayer.isPlaying()) { // 正在播放
+            mMediaPlayer.pause(); // 暂停
+            mCurrentState = STATE_PAUSED; // 当前状态为暂停状态
+        }
+    }
+    mTargetState = STATE_PAUSED; // 目标状态为暂停状态
+}
+```
+##### 挂起播放器
+```java
+// 此方法一般在Activity进入onStop()状态时调用，不改变状态地释放资源
+public void suspend() {
+    release(false);
+}
+```
+##### 恢复播放器
+```java
+// 此方法一般在Activity从后台调到前台进入onResume()状态时调用
+public void resume() {
+    openVideo();
+}
+```
+##### 其他方法
+```java
+int getDuration() // 获取时长
+int getCurrentPosition() // 获取当前播放进度
+void seekTo(int msec) // 跳转到指定位置
+boolean isPlaying() // 视频是否在播放
+getBufferPercentage() // 获取缓冲百分比
+```
+其他 控制器UI加入 及 字幕相关 等方法就不一一分析了。可以自行查看[VideoView源码](https://developer.android.com/reference/android/widget/VideoView.html)
