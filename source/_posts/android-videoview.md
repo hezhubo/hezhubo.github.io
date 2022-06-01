@@ -2,18 +2,20 @@
 title: android多媒体播放器之VideoView
 date: 2016-08-28 12:26:39
 tags: [videoview,多媒体,音视频]
+categories: Android
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;在需要播放视频的时候，我们会往往会直接使用VideoView，因为方便，简单几行代码就搞定了。
-```java
-VideoView videoView; // 通过xml资源或是使用代码自行创建
-MediaController mediaController = new MediaController(this); // 封装了播放控制的一个布局（包含播放/暂停，时长显示，进度条等），this 上下文
-videoView.setMediaController(mediaController); // 设置控制器
-videoView.setVideoPath("/mnt/sdcard/test.mp4"); // 视频路径，支持本地文件，http，rtsp协议
-videoView.start(); // 开始播放
-```
-</br>
-**VideoView其实是SurfaceView+MediaPlayer的封装，下面来分析一下源码的实现。**
-### *基于API 23的主要源码分析：*
+> 在需要播放视频的时候，我们会往往会直接使用VideoView，因为方便，简单几行代码就搞定了。
+> ```java
+> VideoView videoView; // 通过xml资源或是使用代码自行创建
+> MediaController mediaController = new MediaController(this); // 封装了播放控制的一个布局（包含播放/暂停，时长显示，进度条等），this 上下文
+> videoView.setMediaController(mediaController); // 设置控制器
+> videoView.setVideoPath("/mnt/sdcard/test.mp4"); // 视频路径，支持本地文件，http，rtsp协议
+> videoView.start(); // 开始播放
+> ```
+> **VideoView其实是SurfaceView+MediaPlayer的封装，下面来分析一下源码的实现。**
+
+
+### 基于API 23的主要源码分析：
 #### 结构关系
 ```java
 public class VideoView extends SurfaceView implements MediaPlayerControl, SubtitleController.Anchor {
@@ -22,7 +24,7 @@ public class VideoView extends SurfaceView implements MediaPlayerControl, Subtit
 我们可以看到VideoView继承SurfaceView，实现了两接口：MediaPlayerControl和SubtitleController.Anchor。MediaPlayerControl就是android.widget.MediaController的内部接口，MediaController就是通过这个接口来控制播放器的。至于SubtitleController.Anchor这个接口是和字幕有关的，具体怎么用我暂时不清楚。
 下面看一下MediaPlayerControl的源码：
 ```java
- public interface MediaPlayerControl {
+public interface MediaPlayerControl {
     void    start(); // 播放
     void    pause(); // 暂停
     int     getDuration(); // 获取总时长
@@ -650,4 +652,4 @@ void seekTo(int msec) // 跳转到指定位置
 boolean isPlaying() // 视频是否在播放
 getBufferPercentage() // 获取缓冲百分比
 ```
-其他 控制器UI加入 及 字幕相关 等方法就不一一分析了。可以自行查看[VideoView源码](https://developer.android.com/reference/android/widget/VideoView.html)
+其他 控制器UI加入 及 字幕相关 等方法就不一一分析了。可以自行查看[VideoView源码](https://developer.android.google.cn/reference/android/widget/VideoView)

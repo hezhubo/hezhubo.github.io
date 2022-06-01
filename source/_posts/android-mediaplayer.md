@@ -2,12 +2,11 @@
 title: android多媒体播放器之MediaPlayer
 date: 2016-08-27 20:24:15
 tags: [mediaplayer,多媒体,音视频]
+categories: Android
 ---
 
-&nbsp;&nbsp;&nbsp;&nbsp;**废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了。
-呵呵(￣▽￣)"。。。图要翻墙才能看到**
-		
-![android官方MediaPlayer状态图](https://developer.android.com/images/mediaplayer_state_diagram.gif)
+**废话少说，先上一张无比重要的图：MediaPlayer状态图，读懂此图那后面的都是废话了。**
+![android官方MediaPlayer状态图](https://developer.android.google.cn/images/mediaplayer_state_diagram.gif?hl=zh-cn)
 
 #### MediaPlayer的简单使用
 ```java
@@ -20,7 +19,6 @@ try {
     e.printStackTrace();
 }
 ```
-</br>
 #### MediaPlayer的基本方法说明
 ##### 创建MediaPlayer对象
 ```java
@@ -236,4 +234,5 @@ textureView.setSurfaceTextureListener(new TextureView.SurfaceTextureListener() {
 int width = mediaPlayer.getVideoWidth(); // 需要在预处理完成后才会起作用
 int height = mediaPlayer.getVideoHeight(); // 需要在预处理完成后才会起作用
 ```
-其他方法就不一一列出了，可以自行查看[MediaPlayer源码](https://developer.android.com/reference/android/media/MediaPlayer.html)
+其他方法就不一一列出了，可以自行查看[MediaPlayer源码](https://developer.android.google.cn/reference/android/media/MediaPlayer)
+
