@@ -41,9 +41,9 @@
     
       <category term="音视频" scheme="http://hezhubo.github.io/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/"/>
     
-      <category term="videoview" scheme="http://hezhubo.github.io/tags/videoview/"/>
-    
       <category term="多媒体" scheme="http://hezhubo.github.io/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
+    
+      <category term="videoview" scheme="http://hezhubo.github.io/tags/videoview/"/>
     
   </entry>
   
@@ -72,9 +72,9 @@
     
       <category term="音视频" scheme="http://hezhubo.github.io/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/"/>
     
-      <category term="多媒体" scheme="http://hezhubo.github.io/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
-    
       <category term="mediaplayer" scheme="http://hezhubo.github.io/tags/mediaplayer/"/>
+    
+      <category term="多媒体" scheme="http://hezhubo.github.io/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/"/>
     
   </entry>
   
