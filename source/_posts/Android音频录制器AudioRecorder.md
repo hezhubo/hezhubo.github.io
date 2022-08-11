@@ -212,7 +212,7 @@ private fun initPlaybackAudioRecord(mediaProjection: MediaProjection): Boolean {
 
 指定不录制某UID(app)的声音：[AudioPlaybackCaptureConfiguration.excludeUid()](https://developer.android.google.cn/reference/android/media/AudioPlaybackCaptureConfiguration.excludeUid(int)) 
 
-注意：**addMatchingUsage()**和**excludeUsage()**不能同时调用，**addMatchingUid()**和**excludeUid()**也是不能同时调用
+注意：**addMatchingUsage()** 和 **excludeUsage()** 不能同时调用，**addMatchingUid()** 和 **excludeUid()** 也是不能同时调用
 
 最后，并不是所有系统输出的声音都可以被捕获录制到
 
