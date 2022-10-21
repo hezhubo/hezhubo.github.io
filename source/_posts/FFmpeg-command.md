@@ -106,3 +106,14 @@ ffmpeg -i input.mp4 -i logo.png -filter_complex "overlay=10:5" out.mp4    // 左
  * **-ab** 设定声音比特率
  * **-an** 不处理音频
  * **-vol** 设定音量<百分比>，200即原来的2倍
+
+
+
+# ffprobe常用命令
+
+ * **-i** 设定输入流，显示基本信息
+ * **-show_format** 显示输入多媒体流的容器格式信息
+ * **-show_frames** 显示输入多媒体流中的每一帧以及字幕的信息
+ * **-show_streams** 显示输入多媒体流中所有流信息
+ * **-select_streams** 选择要查看的流，**a**表示音频，**v**表示视频
+
